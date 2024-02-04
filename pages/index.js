@@ -26,6 +26,9 @@ export default function Auth() {
               onChange={(e) => setSecret(e.target.value)}
             />
           </div>
+          <button type="submit" className="submit-button">
+            Login / Sign Up
+          </button>
         </form>
       </div>
     </div>
