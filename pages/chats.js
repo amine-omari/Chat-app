@@ -21,16 +21,21 @@ export default function Chats() {
     }
   });
 
+  useEffect(() => {
+    if (username.lenght === 0 || secret.lenght === 0) router.push("/");
+  });
+
   if (!showChat) return <div />;
 
   return (
     <div className="background">
       <div className="shadow">
         <ChatEngine
-          height="calc(100ch - 200px)"
-          projectId="c5dcd0fa-5d2d-4c00-be1b-97353928ffec"
+          height="calc(100vh - 200px)"
+          projectID="c5dcd0fa-5d2d-4c00-be1b-97353928ffec"
           userName={username}
           userSecret={secret}
+          renderNewMessageForm={() => <MessageFormSocial />}
         />
       </div>
     </div>
