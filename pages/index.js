@@ -7,7 +7,19 @@ export default function Auth() {
 
   return (
     <div className="background">
-      <div className="auth-container"></div>
+      <div className="auth-container">
+        <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+          <div className="auth-title">Nextjs Chat</div>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Email"
+              className="text-input"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
