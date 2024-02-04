@@ -9,6 +9,8 @@ export default function Auth() {
 
   const router = useRouter();
 
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
   function onSubmit(e) {
     e.preventDefault();
 
@@ -18,7 +20,11 @@ export default function Auth() {
       .put(
         "https://api.chatengine.io/users/",
         { username, secret },
-        { headers: { "private-key": "8b2e3864-28ef-4387-a539-f2193978dac5" } }
+        {
+          headers: {
+            "private-key": apiKey,
+          },
+        }
       )
       .then((r) => router.push("/chats"));
   }
