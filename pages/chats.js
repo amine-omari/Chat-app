@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../context";
 import { useRouter } from "next/router";
 
@@ -14,6 +14,12 @@ export default function Chats() {
   const { usrname, secret } = useContext(Context);
   const [showChat, setShowChat] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof document !== null) {
+      setShowChat(true);
+    }
+  });
 
   return <div className="background">chats</div>;
 }
