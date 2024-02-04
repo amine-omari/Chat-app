@@ -21,5 +21,7 @@ export default function Chats() {
     }
   });
 
+  if (!showChat) return <div />;
+
   return <div className="background">chats</div>;
 }
