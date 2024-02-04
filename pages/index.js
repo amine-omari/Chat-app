@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { Context } from "../context";
 
 export default function Auth() {
-  return <div className="background">auth</div>;
+  const { username, setUsername, secret, setSecret } = useContext(Context);
+
+  return (
+    <div className="background">
+      <div className="auth-container"></div>
+    </div>
+  );
 }
